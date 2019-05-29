@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Vitality Walk-In</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1 class="display-4">Vitality Group Walk-in</h1>
+                <p class="lead">Please fill out information below to record your walkin.</p>
+            </div>
+        </div>
+
+        <form role="form">
+            <div class="form-group row">
+                <label for="fullName">Full Name</label>
+                <input class="form-control" id="fullName" type="text">
+            </div>
+            <div class="form-group row">
+                <label for="username">Username</label>
+                <input class="form-control" id="username" type="text">
+            </div>
+            <div class="form-group">
+                <label for="description">Description:</label>
+                <textarea class="form-control" id="description" rows="3"></textarea>
+            </div>
+            <button class="btn btn-default" id="submitInfo" type="submit">Submit</button>
+        </form>
+
+    </div>
+
+    <div id="afterSubmit">
+        <p>Thank you for submitting your walk-in information.</p>
+        <button class="btn btn-default" id="confirmButton" type="submit">Ok</button>
+    </div>
+
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>
