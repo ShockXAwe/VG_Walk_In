@@ -78,7 +78,6 @@ database.ref().on("child_added", function (child) {
     tRow.append(fullNameInfoTd, usernameInfoTd, dateInfoTd, descriptionInfoTd);
     tBody.append(tRow);
 
-
 },
 
 
