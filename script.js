@@ -24,8 +24,6 @@ $("#submitInfo").on("click", function (event) {
     var dateMoment = moment().format("MM/DD/YY hh:mm A");
     var description = $("#description").val().trim();
 
- 
-
     var walkinInfo = {
         fullName: fullName,
         username: username,
@@ -39,8 +37,22 @@ $("#submitInfo").on("click", function (event) {
     $("#username").val("");
     $("#description").val("");
 
+    var emailTI = "Name: " + fullName + "<br /> "+ "Username: " + username + "<br />" + "Date: " + dateMoment + "<br />" + "Description: " + description;
 
-});
+    var templateParams = {
+        name: "Walkin_Admin",
+        description: emailTI
+    };
+
+    emailjs.send('default_service', 'tester2626', templateParams)
+        .then(function (response) {
+            console.log('SUCCESS!', response.status, response.text);
+        }, function (error) {
+            console.log('FAILED...', error);
+        });
+
+})
+
 
 $("#confirmButton").on("click", function (event) {
     $(".container").show();
@@ -67,6 +79,11 @@ database.ref().on("child_added", function (child) {
     tBody.append(tRow);
 
 
-}, function (errorObject) {
-    console.log("The read failed: " + errorObject.code);
-});
+},
+
+
+
+
+    function (errorObject) {
+        console.log("The read failed: " + errorObject.code);
+    });
